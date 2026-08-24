@@ -91,6 +91,15 @@ function microdot_filter_wp_resource_hints($urls, $relation_type)
 }
 add_filter('wp_resource_hints', 'microdot_filter_wp_resource_hints', 999, 2);
 
+// Remove WordPress version generator meta tag (security: hides WP version)
+remove_action('wp_head', 'wp_generator');
+
+// Remove RSD (Really Simple Discovery) link - unused unless publishing via legacy desktop blog clients
+remove_action('wp_head', 'rsd_link');
+
+// Remove Windows Live Writer manifest link - obsolete, WLW was discontinued years ago
+remove_action('wp_head', 'wlwmanifest_link');
+
 
 // Limit except length to 125 characters.
 function get_excerpt($count)

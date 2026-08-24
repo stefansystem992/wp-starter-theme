@@ -2,9 +2,9 @@
   "name": "systemstudio-build-package",
   "version": "2025.10.24",
   "scripts": {
-    "watch": "sass main.scss main.css --watch",
-    "parse": "sass main.scss main.css --no-source-map",
-    "prefix": "postcss --replace --no-map --use autoprefixer -b 'last 2 versions' main.css",
+    "watch": "sass assets/styles/main.scss assets/styles/main.css --watch",
+    "parse": "sass assets/styles/main.scss assets/styles/main.css --no-source-map --style=compressed",
+    "prefix": "postcss --replace --no-map --use autoprefixer -b 'last 2 versions' assets/styles/main.css",
     "build": "npm run parse && npm run prefix"
   },
   "dependencies": {

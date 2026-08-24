@@ -22,7 +22,7 @@ function empty(v){
     });
 
     // fire Swiper Ready event
-    if (typeof Swiper !== undefined) {
+    if (typeof Swiper !== 'undefined') {
         document.dispatchEvent(new Event("SwiperReady"));
     }
 
